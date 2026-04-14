@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AQI Prediction</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+
+<div class="container">
+
+    <h2><i class="fas fa-wind"></i> Air Quality Index Prediction</h2>
+
+    <form action="/predict" method="post">
+
+        <div class="input-group">
+            <i class="fas fa-smog"></i>
+            <input type="text" name="pm25" placeholder="PM2.5" required>
+        </div>
+
+        <div class="input-group">
+            <i class="fas fa-cloud"></i>
+            <input type="text" name="pm10" placeholder="PM10" required>
+        </div>
+
+        <div class="input-group">
+            <i class="fas fa-industry"></i>
+            <input type="text" name="no2" placeholder="NO2" required>
+        </div>
+
+        <div class="input-group">
+            <i class="fas fa-burn"></i>
+            <input type="text" name="so2" placeholder="SO2" required>
+        </div>
+
+        <div class="input-group">
+            <i class="fas fa-gas-pump"></i>
+            <input type="text" name="co" placeholder="CO" required>
+        </div>
+
+        <button type="submit">
+            <i class="fas fa-chart-line"></i> Predict AQI
+        </button>
+
+    </form>
+
+    <h3>{{ prediction_text }}</h3>
+
+</div>
+
+</body>
+</html>
